@@ -1,5 +1,5 @@
 {
-  "name": "citijs",
+  "name": "cityjs",
   "version": "0.0.0",
   "description": "Look for nearest city with geo coordinates - a js port of citipy",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DustinWoods/citijs.git"
+    "url": "git+https://github.com/DustinWoods/cityjs.git"
   },
   "keywords": [],
   "author": "Dustin Woods",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DustinWoods/citijs/issues"
+    "url": "https://github.com/DustinWoods/cityjs/issues"
   },
-  "homepage": "https://github.com/DustinWoods/citijs#readme"
+  "homepage": "https://github.com/DustinWoods/cityjs#readme"
 }

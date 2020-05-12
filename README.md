@@ -1,4 +1,4 @@
-# citijs
+# cityjs
 Looks up a city name given geo-coordinates without using remote endpoints. This is a port of the python package [citipy](https://github.com/wingchen/citipy).
 
 **WIP** If you're seeing this message, this project is still a work in progress.
