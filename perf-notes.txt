@@ -1,0 +1,13 @@
+DATA: cities5000
+
+Method: CSV Parse into Objects
+=================================
+Avg time: 1.4812589
+
+Method: lite CSV Parse into Objects
+=================================
+Avg time: 0.1398573
+
+Method: super lite CSV Parse into Objects
+=================================
+Avg time: 0.11917382
