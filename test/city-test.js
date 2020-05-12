@@ -1,5 +1,5 @@
 const describe  = require('kape');
-const nearestCity = require('../');
+const {nearestCity} = require('../');
 
 describe('Name of Function', nearestCity, snapshot =>
   snapshot(

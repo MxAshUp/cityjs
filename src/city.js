@@ -38,4 +38,4 @@ function distance(a, b) {
 
 tree = new kdTree(cities, distance, ["latitude", "longitude"]);
 
-module.exports = (point) => tree.nearest(point, 1);
+module.exports.nearestCity = (point) => tree.nearest(point, 1);
