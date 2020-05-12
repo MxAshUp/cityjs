@@ -1,0 +1,21 @@
+// Kape Snapshot v1
+
+exports[`snapshot #1`] = `
+- 
+  - 
+    latitude:    44.05817
+    longitude:   -121.31531
+    name:        Bend
+    countryCode: US
+  - 0.00003898881741539725
+`;
+
+exports[`snapshot #2`] = `
+- 
+  - 
+    latitude:    41.28639
+    longitude:   -96.23447
+    name:        Elkhorn
+    countryCode: US
+  - 0.0007412654580858802
+`;
