@@ -56,7 +56,8 @@ http.get(`http://download.geonames.org/export/dump/${fileName}.zip`, function(re
       console.log(`Found ${fileName}.txt...`);
       entry
         .pipe(csvParse({
-          delimiter: "	",
+          delimiter: String.fromCharCode(9), // Tab
+          quote: false,
           columns: [
             'geonameid',
             'name',
@@ -80,7 +81,6 @@ http.get(`http://download.geonames.org/export/dump/${fileName}.zip`, function(re
           ]
         }))
         .pipe(stringify({
-          header: true,
           delimiter: String.fromCharCode(9), // Tab
           columns: {
             ...columnsToKeep.reduce((o, k) => ({...o, [k]: k}), {})
