@@ -3,6 +3,8 @@ const {kdTree} = require('kd-tree-javascript');
 const csvParse = require('csv-parse/lib/sync')
 const fs = require('fs');
 
+const RAD = Math.PI/180;
+
 const columns = [
   'latitude',
   'longitude',
@@ -16,24 +18,17 @@ const cities = csvParse(fs.readFileSync(__dirname + '/cities5000.csv'), {
   skip_empty_lines: true
 })
 
-// Taken from kd-tree example: https://github.com/ubilabs/kd-tree-javascript/blob/master/examples/map/index.html
+// Determines distance between two lat/long points. Taken from kd-tree example: https://github.com/ubilabs/kd-tree-javascript/blob/master/examples/map/index.html
 function distance(a, b) {
-  var lat1 = a.latitude,
-  lon1 = a.longitude,
-  lat2 = b.latitude,
-  lon2 = b.longitude;
-  var rad = Math.PI/180;
+  const dLat = (b.latitude-a.latitude)*RAD;
+  const dLon = (b.longitude-a.longitude)*RAD;
 
-  var dLat = (lat2-lat1)*rad;
-  var dLon = (lon2-lon1)*rad;
-  var lat1 = lat1*rad;
-  var lat2 = lat2*rad;
+  const x = Math.sin(dLat/2);
+  const y = Math.sin(dLon/2);
 
-  var x = Math.sin(dLat/2);
-  var y = Math.sin(dLon/2);
+  const d = x*x + y*y * Math.cos(a.latitude*RAD) * Math.cos(b.latitude*RAD);
 
-  var a = x*x + y*y * Math.cos(lat1) * Math.cos(lat2);
-  return Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return Math.atan2(Math.sqrt(d), Math.sqrt(1-d));
 }
 
 tree = new kdTree(cities, distance, ["latitude", "longitude"]);
