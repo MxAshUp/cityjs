@@ -4,6 +4,7 @@ Looks up a city name given geo-coordinates without using remote endpoints. This 
 **WIP** If you're seeing this message, this project is still a work in progress.
 
 ## TODO
+ - [ ] Build utilities for grabbing geoname data
  - [ ] Implement basic geo-coordinate lookups using kd trees as seen in citipy
  - [ ] Implement extended functionality (eg get 5 nearest cities)
  - [ ] Maybe implment proper distance comparison (might not matter)
