@@ -42,9 +42,9 @@ const fs = require('fs');
 const fileName = 'cities5000';
 
 const columnsToKeep = [
-  'name',
   'latitude',
   'longitude',
+  'name',
   'countryCode',
 ]
 
@@ -52,8 +52,7 @@ console.log(`Downloading ${fileName}.zip...`);
 http.get(`http://download.geonames.org/export/dump/${fileName}.zip`, function(response) {
   response.pipe(unzip.Parse())
   .on('entry', function (entry) {
-    var fileName = entry.path;
-    if (fileName === `${fileName}.txt`) {
+    if (entry.path === `${fileName}.txt`) {
       console.log(`Found ${fileName}.txt...`);
       entry
         .pipe(csvParse({
@@ -86,8 +85,9 @@ http.get(`http://download.geonames.org/export/dump/${fileName}.zip`, function(re
             ...columnsToKeep.reduce((o, k) => ({...o, [k]: k}), {})
           }
         }))
-        .pipe(fs.createWriteStream(`${fileName}.txt.temp`))
+        .pipe(fs.createWriteStream(`./src/${fileName}.csv`))
     } else {
+      console.log(`Ignoring ${fileName}...`);
       entry.autodrain();
     }
   })

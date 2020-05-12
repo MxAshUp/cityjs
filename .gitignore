@@ -1,4 +1,3 @@
 node_modules/
 dist/
-*.txt.temp
 package-lock.json
