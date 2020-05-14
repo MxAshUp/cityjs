@@ -1,6 +1,6 @@
 {
   "name": "cityjs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Look for nearest city with geo coordinates - a js port of citipy",
   "main": "index.js",
   "scripts": {
