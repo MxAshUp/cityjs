@@ -1,1 +1,1 @@
-export {nearestCity} from './src/city';
+export * from './src/city';

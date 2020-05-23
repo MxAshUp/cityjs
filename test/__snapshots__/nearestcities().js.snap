@@ -1,0 +1,109 @@
+// Kape Snapshot v1
+
+exports[`snapshot #1`] = `
+- 
+  latitude:    44.05817
+  longitude:   -121.31531
+  name:        Bend
+  countryCode: US
+  distance:    0.00003898881741539725
+- 
+  latitude:    43.99151
+  longitude:   -121.35836
+  name:        Deschutes River Woods
+  countryCode: US
+  distance:    0.0006622218438156748
+- 
+  latitude:    44.27262
+  longitude:   -121.17392
+  name:        Redmond
+  countryCode: US
+  distance:    0.0020506509923908602
+- 
+  latitude:    44.29985
+  longitude:   -120.83447
+  name:        Prineville
+  countryCode: US
+  distance:    0.0036743264102125904
+- 
+  latitude:    44.63345
+  longitude:   -121.12949
+  name:        Madras
+  countryCode: US
+  distance:    0.005126026484326085
+`;
+
+exports[`snapshot #2`] = `
+- 
+  latitude:    41.28639
+  longitude:   -96.23447
+  name:        Elkhorn
+  countryCode: US
+  distance:    0.0007412654580858802
+- 
+  latitude:    41.20528
+  longitude:   -96.04252
+  name:        Ralston
+  countryCode: US
+  distance:    0.001354394356269073
+- 
+  latitude:    41.18389
+  longitude:   -96.1503
+  name:        Chalco
+  countryCode: US
+  distance:    0.001358199275380993
+- 
+  latitude:    41.25626
+  longitude:   -95.94043
+  name:        Omaha
+  countryCode: US
+  distance:    0.001532257681256897
+- 
+  latitude:    41.18389
+  longitude:   -96.03113
+  name:        La Vista
+  countryCode: US
+  distance:    0.001553663487577589
+- 
+  latitude:    41.15444
+  longitude:   -96.04224
+  name:        Papillion
+  countryCode: US
+  distance:    0.0017531064213447524
+- 
+  latitude:    41.54444
+  longitude:   -96.12502
+  name:        Blair
+  countryCode: US
+  distance:    0.001793821940198164
+- 
+  latitude:    41.14083
+  longitude:   -96.23974
+  name:        Gretna
+  countryCode: US
+  distance:    0.0018391338333237563
+- 
+  latitude:    41.26194
+  longitude:   -95.86083
+  name:        Council Bluffs
+  countryCode: US
+  distance:    0.001989591353907131
+- 
+  latitude:    41.13667
+  longitude:   -95.89084
+  name:        Bellevue
+  countryCode: US
+  distance:    0.0024374591032459416
+- 
+  latitude:    41.43333
+  longitude:   -96.49808
+  name:        Fremont
+  countryCode: US
+  distance:    0.0024449985160558446
+- 
+  latitude:    41.01139
+  longitude:   -95.88223
+  name:        Plattsmouth
+  countryCode: US
+  distance:    0.0033473801798346073
+`;
