@@ -48,12 +48,18 @@ const columnsToKeep = [
   'countryCode',
 ]
 
+const chunks = [];
+const escapeLines = (line) => line.replace(/`/g,'\\`');
+const addChunk = (newChunk) => chunks.push(newChunk);
+const outputChunks = () => fs.writeFileSync(`./src/${fileName}.csv.js`, `module.exports = \`${escapeLines(Buffer.concat(chunks).toString())}\`;`);
+
 console.log(`Downloading ${fileName}.zip...`);
 http.get(`http://download.geonames.org/export/dump/${fileName}.zip`, function(response) {
   response.pipe(unzip.Parse())
   .on('entry', function (entry) {
     if (entry.path === `${fileName}.txt`) {
       console.log(`Found ${fileName}.txt...`);
+
       entry
         .pipe(csvParse({
           delimiter: String.fromCharCode(9), // Tab
@@ -86,7 +92,9 @@ http.get(`http://download.geonames.org/export/dump/${fileName}.zip`, function(re
             ...columnsToKeep.reduce((o, k) => ({...o, [k]: k}), {})
           }
         }))
-        .pipe(fs.createWriteStream(`./src/${fileName}.csv`))
+        .on('data', addChunk)
+        .on('end', outputChunks)
+        //.pipe(fs.createWriteStream(`./src/${fileName}.csv`))
     } else {
       console.log(`Ignoring ${fileName}...`);
       entry.autodrain();
