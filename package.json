@@ -2,9 +2,7 @@
   "name": "cityjs",
   "version": "0.2.0",
   "description": "Look for nearest city with geo coordinates - a js port of citipy",
-  "main": "dist/cityjs.cjs.js",
-  "module": "dist/cityjs.esm.js",
-  "browser": "dist/cityjs.umd.min.js",
+  "main": "dist/cityjs.umd.min.js",
   "scripts": {
     "prepublish": "npm run build",
     "build": "npm run build:clean && npm run build:rollup",

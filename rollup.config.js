@@ -7,7 +7,7 @@ export default [
 		input: 'index.js',
 		output: {
 			name: 'cityjs',
-			file: pkg.browser,
+			file: pkg.main,
 			format: 'umd',
 			sourcemap: true,
 		},
@@ -15,24 +15,4 @@ export default [
 			terser() // minify it
 		]
 	},
-
-	// CommonJS (for Node) and ES module (for bundlers) build.
-	{
-		input: 'index.js',
-		plugins: [
-			terser() // minify it
-		],
-		output: [
-			{
-				file: pkg.main,
-				format: 'cjs',
-				sourcemap: true,
-			},
-			{
-				file: pkg.module,
-				format: 'es',
-				sourcemap: true,
-			}
-		]
-	}
 ];
