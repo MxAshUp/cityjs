@@ -1,7 +1,7 @@
 const RAD = Math.PI/180;
 
 // Determines distance between two lat/long points. Taken from kd-tree example: https://github.com/ubilabs/kd-tree-javascript/blob/master/examples/map/index.html
-module.exports = function distance(a, b) {
+export default function distance(a, b) {
   const dLat = (b.latitude-a.latitude)*RAD;
   const dLon = (b.longitude-a.longitude)*RAD;
 

@@ -1,5 +1,5 @@
 const describe  = require('kape');
-const {nearestCity} = require('../');
+const {nearestCity} = require('../dist/cityjs.umd.min');
 
 describe('nearestCity()', nearestCity, snapshot =>
   snapshot(

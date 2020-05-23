@@ -2,16 +2,27 @@
   "name": "cityjs",
   "version": "0.2.0",
   "description": "Look for nearest city with geo coordinates - a js port of citipy",
-  "main": "index.js",
+  "main": "dist/cityjs.cjs.js",
+  "module": "dist/cityjs.esm.js",
+  "browser": "dist/cityjs.umd.min.js",
   "scripts": {
-    "test": "node test/city-test.js"
+    "prepublish": "npm run build",
+    "build": "npm run build:clean && npm run build:rollup",
+    "build:clean": "rm -rf dist",
+    "build:rollup": "rollup -c",
+    "watch": "rollup -c -w",
+    "test": "npm run build && npm run test:dist",
+    "test:dist": "node -r esm test/city-test.js"
   },
+  "files": [
+    "dist/"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DustinWoods/cityjs.git"
   },
   "keywords": [],
-  "author": "Dustin Woods",
+  "author": "Dustin Woods <dustin@whatup.email>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DustinWoods/cityjs/issues"
@@ -19,10 +30,11 @@
   "homepage": "https://github.com/DustinWoods/cityjs#readme",
   "devDependencies": {
     "csv": "^5.3.2",
+    "esm": "^3.2.25",
     "kape": "0.0.20",
+    "rollup": "^2.10.5",
+    "rollup-plugin-terser": "^5.3.0",
     "unzip": "^0.1.11"
   },
-  "dependencies": {
-    "kd-tree-javascript": "^1.0.3"
-  }
+  "dependencies": {}
 }

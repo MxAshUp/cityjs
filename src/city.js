@@ -1,3 +1,3 @@
-tree = require('./cities')();
+import citiesTree from './cities';
 
-module.exports.nearestCity = (point) => tree.nearest(point, 1);
+export const nearestCity = (point) => citiesTree.nearest(point, 1);
